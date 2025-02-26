@@ -2,8 +2,8 @@ import styles from "./Switch.module.css";
 
 const Switch = ({ troca, islight }) => {
   return (
-    <div onClick={troca} className={islight ? styles.light : ""}>
-      <div id={styles.switch}>
+    <div  className={islight ? styles.light : ""}>
+      <div id={styles.switch} onClick={troca}>
         <button></button>
         <span></span>
       </div>

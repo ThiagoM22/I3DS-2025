@@ -1,9 +1,10 @@
 li a {
+  max-width: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 16px 24px;
-
+  margin: 0 auto;
   border: 1px solid var(--stroke-color);
   border-radius: 8px;
   background: var(--surface-color);
@@ -14,7 +15,6 @@ li a {
   text-decoration: none;
   font-weight: bold;
 }
-
 li a:hover {
   background: var(--surface-color-hover);
   border: 1px solid var(--text-color);

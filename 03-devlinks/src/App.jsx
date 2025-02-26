@@ -1,5 +1,6 @@
 import "./App.css";
 import foto from "../src/img/Shrek.gif"; //Importante o Avatar da pasta imagem e atribuindo seu avlor para a variavel foto
+import foto2 from "../src/img/Avatar.jpg";
 
 import Profile from "./components/profile/profile";
 import Switch from "./components/switch/Switch";
@@ -9,22 +10,24 @@ import Footer from "./components/footer/Footer";
 import { useState } from "react";
 const App = () => {
   const [isLight, setIsLight] = useState(false);
+  const [fotoPerfil, setFotoPerfil] = useState(foto);
 
   const troca = () => {
     setIsLight(!isLight);
+    setFotoPerfil(isLight ? foto : foto2);
   };
 
   return (
     <div id="App" className={isLight && "light"}>
-      <Profile fotoPerfil={foto}>@ThiagoMazzi</Profile>
+      <Profile fotoPerfil={fotoPerfil}>@ThiagoMazzi</Profile>
       <Switch troca={troca} islight={isLight} />
       <ul>
         <Links link={"https://github.com/ThiagoM22"}>Github</Links>
         <Links link={"https://www.instagram.com/thiago.mazzi/"}>
           Instagram
         </Links>
-        <Links link={""}>Portifólio</Links>
-        <Links link={""}>Projetos</Links>
+        <Links link={"https://xn--portiflio-b7a.com/"}>Portifólio</Links>
+        <Links link={"https://nubank.com.br/"}>Me pague um café☕</Links>
       </ul>
 
       <div id="socialLinks">
