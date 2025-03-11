@@ -18,6 +18,7 @@ const App = () => {
   };
 
   return (
+   <div className="container">
     <div id="App" className={isLight && "light"}>
       <Profile fotoPerfil={fotoPerfil}>@ThiagoMazzi</Profile>
       <Switch troca={troca} islight={isLight} />
@@ -48,6 +49,7 @@ const App = () => {
 
       <Footer>Meu nome é Mazzi</Footer>
     </div>
+   </div>
   );
 };
 
