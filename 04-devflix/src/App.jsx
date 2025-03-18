@@ -9,7 +9,8 @@ function App() {
   const [search, setSearch] = useState("");
   const [movies, setMovies] = useState([]);
   //Utilizando chave de API do arquivo .env
-  const apiKey = import.meta.env.VITE_OMDB_API_KEY;
+
+const apiKey = "4d577fa" ;
   const apiUrl = `https://omdbapi.com/?apikey=${apiKey}`;
 
   // alimentando com dados para não ficar nulo
