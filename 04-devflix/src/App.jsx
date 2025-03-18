@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import Footer from "./components/footer/Footer";
 import MovieCard from "./components/movieCard/MovieCard";
+import logo from "./assets/devflix.png";
+import lupa from "./assets/search.svg";
 
 function App() {
   const [search, setSearch] = useState("");
@@ -12,7 +14,7 @@ function App() {
 
   // alimentando com dados para não ficar nulo
   useEffect(() => {
-    searchMovies("The Legend Of Zelda");
+    searchMovies("Star Wars");
   }, []);
   //criando a conexão com a API e trazendo informações
   const searchMovies = async (title) => {
@@ -29,7 +31,7 @@ function App() {
 
   return (
     <div id="app">
-      <img className="logo" src={"https://placehold.co/200x200"} alt="" />
+      <img className="logo" src={logo} alt="" />
 
       <div className="search">
         <input
@@ -38,20 +40,17 @@ function App() {
           Type="text"
           placeholder="Pesquise por filmes"
         />
-        <img
-          onClick={() => searchMovies(search)}
-          src="https://placehold.co/20x20"
-          alt=""
-        />
+        <img onClick={() => searchMovies(search)} src={lupa} alt="" />
       </div>
-{movies?.length > 0 ? (
-  <div className="container">
-      {movies.map((movie, index) => (
-        <MovieCard key={index} {...movie} />
-      ))}
-      </div>
-) : (
-  <h2 className="empty">Filme não achado</h2>)}
+      {movies?.length > 0 ? (
+        <div className="container">
+          {movies.map((movie, index) => (
+            <MovieCard key={index} {...movie} />
+          ))}
+        </div>
+      ) : (
+        <h2 className="empty">Filme não achado</h2>
+      )}
 
       <Footer
         devName={"Thiago Mazzi"}
