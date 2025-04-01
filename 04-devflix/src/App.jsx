@@ -10,7 +10,7 @@ function App() {
   const [movies, setMovies] = useState([]);
   //Utilizando chave de API do arquivo .env
 
-const apiKey = "4d577fa" ;
+  const apiKey = "4d577fa";
   const apiUrl = `https://omdbapi.com/?apikey=${apiKey}`;
 
   // alimentando com dados para não ficar nulo
