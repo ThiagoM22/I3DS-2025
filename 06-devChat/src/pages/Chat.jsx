@@ -1,4 +1,5 @@
-import React, { use, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import styles from "./Chat.module.css";
 const Chat = (props) => {
   const [messagesList, setMessagesList] = useState([]);
   const messageRef = useRef();
@@ -32,7 +33,7 @@ const Chat = (props) => {
     <div
       id="chat-container"
       style={{ width: "400px", height: "600px" }}
-      className="bg-secondary rounded-4 p-3 d-flex flex-column"
+      className="bg-light rounded-4 p-3 d-flex flex-column"
     >
       <div
         id="chat-body"
@@ -64,13 +65,13 @@ const Chat = (props) => {
           onClick={() => {}}
           onKeyDown={(e) => e.key == "Enter" && hadleSubmit()}
         />
-        <span className="input-group-text">
+        <span className="input-group-text" style={{ backgroundColor:"#7f00b2" }}>
           <button
             className="btn m-0 input-group-text"
             id="basic-addon1"
             onClick={() => hadleSubmit()}
           >
-            <i className="bi bi-send-fill"></i>
+            <i className="bi bi-send-fill" style={{ color: "white",}}></i>
           </button>
         </span>
       </div>
